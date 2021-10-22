@@ -3,7 +3,7 @@ from asyncio import get_event_loop
 from typing import TYPE_CHECKING, Awaitable
 
 if TYPE_CHECKING:
-    from slurm.client.api_client import ApiClient
+    from ..api_client import ApiClient
 
 
 class _OpenapiApi:

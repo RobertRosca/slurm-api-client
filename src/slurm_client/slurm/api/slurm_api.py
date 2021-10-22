@@ -3,10 +3,10 @@ from asyncio import get_event_loop
 from typing import TYPE_CHECKING, Awaitable
 
 from fastapi.encoders import jsonable_encoder
-from slurm.client import models as m
+from .. import models as m
 
 if TYPE_CHECKING:
-    from slurm.client.api_client import ApiClient
+    from ..api_client import ApiClient
 
 
 class _SlurmApi:

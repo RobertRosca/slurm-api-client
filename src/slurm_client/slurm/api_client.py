@@ -3,9 +3,9 @@ from typing import Any, Awaitable, Callable, Dict, Generic, Type, TypeVar, overl
 
 from httpx import AsyncClient, Request, Response
 from pydantic import ValidationError, parse_obj_as
-from slurm.client.api.openapi_api import AsyncOpenapiApi, SyncOpenapiApi
-from slurm.client.api.slurm_api import AsyncSlurmApi, SyncSlurmApi
-from slurm.client.exceptions import ResponseHandlingException, UnexpectedResponse
+from .api.openapi_api import AsyncOpenapiApi, SyncOpenapiApi
+from .api.slurm_api import AsyncSlurmApi, SyncSlurmApi
+from .exceptions import ResponseHandlingException, UnexpectedResponse
 
 ClientT = TypeVar("ClientT", bound="ApiClient")
 

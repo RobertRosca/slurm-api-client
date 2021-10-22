@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "slurm-api-client"
+name = "slurm-client"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Robert Rosca"]
 readme = "README.md"
-packages = [{include = "slurm_api_client", from = "src"}]
+packages = [{include = "slurm_client", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
