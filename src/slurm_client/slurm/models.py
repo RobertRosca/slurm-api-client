@@ -25,8 +25,12 @@ class V0036DiagStatistics(BaseModel):
     schedule_cycle_last: "Optional[int]" = Field(None, alias="schedule_cycle_last")
     schedule_cycle_total: "Optional[int]" = Field(None, alias="schedule_cycle_total")
     schedule_cycle_mean: "Optional[int]" = Field(None, alias="schedule_cycle_mean")
-    schedule_cycle_mean_depth: "Optional[int]" = Field(None, alias="schedule_cycle_mean_depth")
-    schedule_cycle_per_minute: "Optional[int]" = Field(None, alias="schedule_cycle_per_minute")
+    schedule_cycle_mean_depth: "Optional[int]" = Field(
+        None, alias="schedule_cycle_mean_depth"
+    )
+    schedule_cycle_per_minute: "Optional[int]" = Field(
+        None, alias="schedule_cycle_per_minute"
+    )
     schedule_queue_length: "Optional[int]" = Field(None, alias="schedule_queue_length")
     jobs_submitted: "Optional[int]" = Field(None, alias="jobs_submitted")
     jobs_started: "Optional[int]" = Field(None, alias="jobs_started")
@@ -37,8 +41,12 @@ class V0036DiagStatistics(BaseModel):
     jobs_running: "Optional[int]" = Field(None, alias="jobs_running")
     job_states_ts: "Optional[int]" = Field(None, alias="job_states_ts")
     bf_backfilled_jobs: "Optional[int]" = Field(None, alias="bf_backfilled_jobs")
-    bf_last_backfilled_jobs: "Optional[int]" = Field(None, alias="bf_last_backfilled_jobs")
-    bf_backfilled_het_jobs: "Optional[int]" = Field(None, alias="bf_backfilled_het_jobs")
+    bf_last_backfilled_jobs: "Optional[int]" = Field(
+        None, alias="bf_last_backfilled_jobs"
+    )
+    bf_backfilled_het_jobs: "Optional[int]" = Field(
+        None, alias="bf_backfilled_het_jobs"
+    )
     bf_cycle_counter: "Optional[int]" = Field(None, alias="bf_cycle_counter")
     bf_cycle_mean: "Optional[int]" = Field(None, alias="bf_cycle_mean")
     bf_cycle_max: "Optional[int]" = Field(None, alias="bf_cycle_max")
@@ -60,7 +68,9 @@ class V0036Error(BaseModel):
 
 class V0036JobProperties(BaseModel):
     account: "Optional[str]" = Field(None, alias="account")
-    account_gather_freqency: "Optional[str]" = Field(None, alias="account_gather_freqency")
+    account_gather_freqency: "Optional[str]" = Field(
+        None, alias="account_gather_freqency"
+    )
     argv: "Optional[List[str]]" = Field(None, alias="argv")
     array: "Optional[str]" = Field(None, alias="array")
     batch_features: "Optional[str]" = Field(None, alias="batch_features")
@@ -76,16 +86,22 @@ class V0036JobProperties(BaseModel):
     cpu_frequency: "Optional[str]" = Field(None, alias="cpu_frequency")
     cpus_per_gpu: "Optional[str]" = Field(None, alias="cpus_per_gpu")
     cpus_per_task: "Optional[int]" = Field(None, alias="cpus_per_task")
-    current_working_directory: "Optional[str]" = Field(None, alias="current_working_directory")
+    current_working_directory: "Optional[str]" = Field(
+        None, alias="current_working_directory"
+    )
     deadline: "Optional[str]" = Field(None, alias="deadline")
     delay_boot: "Optional[int]" = Field(None, alias="delay_boot")
     dependency: "Optional[str]" = Field(None, alias="dependency")
     distribution: "Optional[str]" = Field(None, alias="distribution")
     environment: "Any" = Field(..., alias="environment")
-    exclusive: "Literal['user', 'mcs', 'true', 'false']" = Field(None, alias="exclusive")
+    exclusive: "Literal['user', 'mcs', 'true', 'false']" = Field(
+        None, alias="exclusive"
+    )
     get_user_environment: "Optional[bool]" = Field(None, alias="get_user_environment")
     gres: "Optional[str]" = Field(None, alias="gres")
-    gres_flags: "Literal['disable-binding', 'enforce-binding']" = Field(None, alias="gres_flags")
+    gres_flags: "Literal['disable-binding', 'enforce-binding']" = Field(
+        None, alias="gres_flags"
+    )
     gpu_binding: "Optional[str]" = Field(None, alias="gpu_binding")
     gpu_frequency: "Optional[str]" = Field(None, alias="gpu_frequency")
     gpus: "Optional[str]" = Field(None, alias="gpus")
@@ -93,7 +109,9 @@ class V0036JobProperties(BaseModel):
     gpus_per_socket: "Optional[str]" = Field(None, alias="gpus_per_socket")
     gpus_per_task: "Optional[str]" = Field(None, alias="gpus_per_task")
     hold: "Optional[bool]" = Field(None, alias="hold")
-    kill_on_invalid_dependency: "Optional[bool]" = Field(None, alias="kill_on_invalid_dependency")
+    kill_on_invalid_dependency: "Optional[bool]" = Field(
+        None, alias="kill_on_invalid_dependency"
+    )
     licenses: "Optional[str]" = Field(None, alias="licenses")
     mail_type: "Optional[str]" = Field(None, alias="mail_type")
     mail_user: "Optional[str]" = Field(None, alias="mail_user")
@@ -136,7 +154,9 @@ class V0036JobResources(BaseModel):
     nodes: "Optional[str]" = Field(None, alias="nodes")
     allocated_cpus: "Optional[int]" = Field(None, alias="allocated_cpus")
     allocated_hosts: "Optional[int]" = Field(None, alias="allocated_hosts")
-    allocated_nodes: "Optional[List[V0036NodeAllocation]]" = Field(None, alias="allocated_nodes")
+    allocated_nodes: "Optional[List[V0036NodeAllocation]]" = Field(
+        None, alias="allocated_nodes"
+    )
 
 
 class V0036JobResponseProperties(BaseModel):
@@ -166,7 +186,9 @@ class V0036JobResponseProperties(BaseModel):
     cpus_per_task: "Optional[str]" = Field(None, alias="cpus_per_task")
     cpu_frequency_minimum: "Optional[str]" = Field(None, alias="cpu_frequency_minimum")
     cpu_frequency_maximum: "Optional[str]" = Field(None, alias="cpu_frequency_maximum")
-    cpu_frequency_governor: "Optional[str]" = Field(None, alias="cpu_frequency_governor")
+    cpu_frequency_governor: "Optional[str]" = Field(
+        None, alias="cpu_frequency_governor"
+    )
     cpus_per_tres: "Optional[str]" = Field(None, alias="cpus_per_tres")
     deadline: "Optional[str]" = Field(None, alias="deadline")
     delay_boot: "Optional[str]" = Field(None, alias="delay_boot")
@@ -178,8 +200,12 @@ class V0036JobResponseProperties(BaseModel):
     exit_code: "Optional[int]" = Field(None, alias="exit_code")
     features: "Optional[str]" = Field(None, alias="features")
     federation_origin: "Optional[str]" = Field(None, alias="federation_origin")
-    federation_siblings_active: "Optional[str]" = Field(None, alias="federation_siblings_active")
-    federation_siblings_viable: "Optional[str]" = Field(None, alias="federation_siblings_viable")
+    federation_siblings_active: "Optional[str]" = Field(
+        None, alias="federation_siblings_active"
+    )
+    federation_siblings_viable: "Optional[str]" = Field(
+        None, alias="federation_siblings_viable"
+    )
     gres_detail: "Optional[List[str]]" = Field(None, alias="gres_detail")
     group_id: "Optional[str]" = Field(None, alias="group_id")
     job_id: "Optional[str]" = Field(None, alias="job_id")
@@ -207,7 +233,9 @@ class V0036JobResponseProperties(BaseModel):
     memory_per_node: "Optional[str]" = Field(None, alias="memory_per_node")
     memory_per_cpu: "Optional[str]" = Field(None, alias="memory_per_cpu")
     minimum_cpus_per_node: "Optional[str]" = Field(None, alias="minimum_cpus_per_node")
-    minimum_tmp_disk_per_node: "Optional[str]" = Field(None, alias="minimum_tmp_disk_per_node")
+    minimum_tmp_disk_per_node: "Optional[str]" = Field(
+        None, alias="minimum_tmp_disk_per_node"
+    )
     preempt_time: "Optional[str]" = Field(None, alias="preempt_time")
     pre_sus_time: "Optional[str]" = Field(None, alias="pre_sus_time")
     priority: "Optional[str]" = Field(None, alias="priority")
@@ -246,7 +274,9 @@ class V0036JobResponseProperties(BaseModel):
     user_id: "Optional[str]" = Field(None, alias="user_id")
     user_name: "Optional[str]" = Field(None, alias="user_name")
     wckey: "Optional[str]" = Field(None, alias="wckey")
-    current_working_directory: "Optional[str]" = Field(None, alias="current_working_directory")
+    current_working_directory: "Optional[str]" = Field(
+        None, alias="current_working_directory"
+    )
 
 
 class V0036JobSubmission(BaseModel):
@@ -269,7 +299,9 @@ class V0036JobsResponse(BaseModel):
 
 class V0036Node(BaseModel):
     architecture: "Optional[str]" = Field(None, alias="architecture")
-    burstbuffer_network_address: "Optional[str]" = Field(None, alias="burstbuffer_network_address")
+    burstbuffer_network_address: "Optional[str]" = Field(
+        None, alias="burstbuffer_network_address"
+    )
     boards: "Optional[int]" = Field(None, alias="boards")
     boot_time: "Optional[int]" = Field(None, alias="boot_time")
     comment: "Optional[str]" = Field(None, alias="comment")
@@ -285,7 +317,9 @@ class V0036Node(BaseModel):
     gres_used: "Optional[str]" = Field(None, alias="gres_used")
     mcs_label: "Optional[str]" = Field(None, alias="mcs_label")
     name: "Optional[str]" = Field(None, alias="name")
-    next_state_after_reboot: "Optional[str]" = Field(None, alias="next_state_after_reboot")
+    next_state_after_reboot: "Optional[str]" = Field(
+        None, alias="next_state_after_reboot"
+    )
     address: "Optional[str]" = Field(None, alias="address")
     hostname: "Optional[str]" = Field(None, alias="hostname")
     state: "Optional[str]" = Field(None, alias="state")
@@ -320,19 +354,25 @@ class V0036NodesResponse(BaseModel):
 class V0036Partition(BaseModel):
     flags: "Optional[List[str]]" = Field(None, alias="flags")
     preemption_mode: "Optional[str]" = Field(None, alias="preemption_mode")
-    allowed_allocation_nodes: "Optional[str]" = Field(None, alias="allowed_allocation_nodes")
+    allowed_allocation_nodes: "Optional[str]" = Field(
+        None, alias="allowed_allocation_nodes"
+    )
     allowed_accounts: "Optional[str]" = Field(None, alias="allowed_accounts")
     allowed_groups: "Optional[str]" = Field(None, alias="allowed_groups")
     allowed_qos: "Optional[str]" = Field(None, alias="allowed_qos")
     alternative: "Optional[str]" = Field(None, alias="alternative")
     billing_weights: "Optional[str]" = Field(None, alias="billing_weights")
-    default_memory_per_cpu: "Optional[int]" = Field(None, alias="default_memory_per_cpu")
+    default_memory_per_cpu: "Optional[int]" = Field(
+        None, alias="default_memory_per_cpu"
+    )
     default_time_limit: "Optional[int]" = Field(None, alias="default_time_limit")
     denied_accounts: "Optional[str]" = Field(None, alias="denied_accounts")
     denied_qos: "Optional[str]" = Field(None, alias="denied_qos")
     preemption_grace_time: "Optional[int]" = Field(None, alias="preemption_grace_time")
     maximum_cpus_per_node: "Optional[int]" = Field(None, alias="maximum_cpus_per_node")
-    maximum_memory_per_node: "Optional[int]" = Field(None, alias="maximum_memory_per_node")
+    maximum_memory_per_node: "Optional[int]" = Field(
+        None, alias="maximum_memory_per_node"
+    )
     maximum_nodes_per_job: "Optional[int]" = Field(None, alias="maximum_nodes_per_job")
     max_time_limit: "Optional[int]" = Field(None, alias="max_time_limit")
     min_nodes_per_job: "Optional[int]" = Field(None, alias="min_nodes_per_job")

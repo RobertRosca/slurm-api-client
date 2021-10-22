@@ -5,8 +5,12 @@ from pydantic import BaseModel, Field
 
 
 class Dbv0036Account(BaseModel):
-    associations: "Optional[List[Dbv0036AssociationShortInfo]]" = Field(None, alias="associations")
-    coordinators: "Optional[List[Dbv0036CoordinatorInfo]]" = Field(None, alias="coordinators")
+    associations: "Optional[List[Dbv0036AssociationShortInfo]]" = Field(
+        None, alias="associations"
+    )
+    coordinators: "Optional[List[Dbv0036CoordinatorInfo]]" = Field(
+        None, alias="coordinators"
+    )
     description: "Optional[str]" = Field(None, alias="description")
     name: "Optional[str]" = Field(None, alias="name")
     organization: "Optional[str]" = Field(None, alias="organization")
@@ -102,7 +106,9 @@ class Dbv0036AssociationUsage(BaseModel):
     fairshare_shares: "Optional[int]" = Field(None, alias="fairshare_shares")
     normalized_priority: "Optional[int]" = Field(None, alias="normalized_priority")
     normalized_shares: "Optional[float]" = Field(None, alias="normalized_shares")
-    effective_normalized_usage: "Optional[float]" = Field(None, alias="effective_normalized_usage")
+    effective_normalized_usage: "Optional[float]" = Field(
+        None, alias="effective_normalized_usage"
+    )
     raw_usage: "Optional[int]" = Field(None, alias="raw_usage")
     job_count: "Optional[int]" = Field(None, alias="job_count")
     fairshare_level: "Optional[float]" = Field(None, alias="fairshare_level")
@@ -110,16 +116,22 @@ class Dbv0036AssociationUsage(BaseModel):
 
 class Dbv0036AssociationsInfo(BaseModel):
     errors: "Optional[List[Dbv0036Error]]" = Field(None, alias="errors")
-    associations: "Optional[List[Dbv0036Association]]" = Field(None, alias="associations")
+    associations: "Optional[List[Dbv0036Association]]" = Field(
+        None, alias="associations"
+    )
 
 
 class Dbv0036ClusterInfo(BaseModel):
-    controller: "Optional[Dbv0036ClusterInfoController]" = Field(None, alias="controller")
+    controller: "Optional[Dbv0036ClusterInfoController]" = Field(
+        None, alias="controller"
+    )
     flags: "Optional[List[str]]" = Field(None, alias="flags")
     name: "Optional[str]" = Field(None, alias="name")
     nodes: "Optional[str]" = Field(None, alias="nodes")
     select_plugin: "Optional[str]" = Field(None, alias="select_plugin")
-    associations: "Optional[Dbv0036ClusterInfoAssociations]" = Field(None, alias="associations")
+    associations: "Optional[Dbv0036ClusterInfoAssociations]" = Field(
+        None, alias="associations"
+    )
     rpc_version: "Optional[int]" = Field(None, alias="rpc_version")
     tres: "Optional[List[Dbv0036ResponseTres]]" = Field(None, alias="tres")
 
@@ -137,7 +149,9 @@ class Dbv0036ConfigInfo(BaseModel):
     errors: "Optional[List[Dbv0036Error]]" = Field(None, alias="errors")
     tres: "Optional[List[List[Any]]]" = Field(None, alias="tres")
     accounts: "Optional[List[Dbv0036Account]]" = Field(None, alias="accounts")
-    associations: "Optional[List[Dbv0036Association]]" = Field(None, alias="associations")
+    associations: "Optional[List[Dbv0036Association]]" = Field(
+        None, alias="associations"
+    )
     users: "Optional[List[Dbv0036User]]" = Field(None, alias="users")
     qos: "Optional[List[Dbv0036Qos]]" = Field(None, alias="qos")
     wckeys: "Optional[List[Dbv0036Wckey]]" = Field(None, alias="wckeys")
@@ -197,10 +211,14 @@ class Dbv0036Job(BaseModel):
     allocation_nodes: "Optional[str]" = Field(None, alias="allocation_nodes")
     array: "Optional[Dbv0036JobArray]" = Field(None, alias="array")
     time: "Optional[Dbv0036JobTime]" = Field(None, alias="time")
-    association: "Optional[Dbv0036AssociationShortInfo]" = Field(None, alias="association")
+    association: "Optional[Dbv0036AssociationShortInfo]" = Field(
+        None, alias="association"
+    )
     cluster: "Optional[str]" = Field(None, alias="cluster")
     constraints: "Optional[str]" = Field(None, alias="constraints")
-    derived_exit_code: "Optional[Dbv0036JobExitCode]" = Field(None, alias="derived_exit_code")
+    derived_exit_code: "Optional[Dbv0036JobExitCode]" = Field(
+        None, alias="derived_exit_code"
+    )
     exit_code: "Optional[Dbv0036JobExitCode]" = Field(None, alias="exit_code")
     flags: "Optional[List[str]]" = Field(None, alias="flags")
     group: "Optional[str]" = Field(None, alias="group")
@@ -302,7 +320,9 @@ class Dbv0036JobStep(BaseModel):
 
 
 class Dbv0036JobStepCPU(BaseModel):
-    requested_frequency: "Optional[Dbv0036JobStepCPURequestedFrequency]" = Field(None, alias="requested_frequency")
+    requested_frequency: "Optional[Dbv0036JobStepCPURequestedFrequency]" = Field(
+        None, alias="requested_frequency"
+    )
     governor: "Optional[List[str]]" = Field(None, alias="governor")
 
 
@@ -347,8 +367,12 @@ class Dbv0036JobStepStepTask(BaseModel):
 
 
 class Dbv0036JobStepStepTres(BaseModel):
-    requested: "Optional[Dbv0036JobStepStepTresRequested]" = Field(None, alias="requested")
-    consumed: "Optional[Dbv0036JobStepStepTresRequested]" = Field(None, alias="consumed")
+    requested: "Optional[Dbv0036JobStepStepTresRequested]" = Field(
+        None, alias="requested"
+    )
+    consumed: "Optional[Dbv0036JobStepStepTresRequested]" = Field(
+        None, alias="consumed"
+    )
     allocated: "Optional[List[Any]]" = Field(None, alias="allocated")
 
 
@@ -433,7 +457,9 @@ class Dbv0036QosLimits(BaseModel):
 
 
 class Dbv0036QosLimitsMax(BaseModel):
-    wall_clock: "Optional[Dbv0036QosLimitsMaxWallClock]" = Field(None, alias="wall_clock")
+    wall_clock: "Optional[Dbv0036QosLimitsMaxWallClock]" = Field(
+        None, alias="wall_clock"
+    )
     jobs: "Optional[Dbv0036QosLimitsMaxJobs]" = Field(None, alias="jobs")
     accruing: "Optional[Dbv0036QosLimitsMaxAccruing]" = Field(None, alias="accruing")
     tres: "Optional[Dbv0036QosLimitsMaxTres]" = Field(None, alias="tres")
@@ -554,8 +580,12 @@ class Dbv0036TresInfo(BaseModel):
 
 class Dbv0036User(BaseModel):
     administrator_level: "Optional[str]" = Field(None, alias="administrator_level")
-    associations: "Optional[Dbv0036UserAssociations]" = Field(None, alias="associations")
-    coordinators: "Optional[List[Dbv0036CoordinatorInfo]]" = Field(None, alias="coordinators")
+    associations: "Optional[Dbv0036UserAssociations]" = Field(
+        None, alias="associations"
+    )
+    coordinators: "Optional[List[Dbv0036CoordinatorInfo]]" = Field(
+        None, alias="coordinators"
+    )
     default: "Optional[Dbv0036UserDefault]" = Field(None, alias="default")
     name: "Optional[str]" = Field(None, alias="name")
 

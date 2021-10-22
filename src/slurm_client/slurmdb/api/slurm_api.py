@@ -30,7 +30,9 @@ class _SlurmApi:
             url="/wckeys/",
         )
 
-    def _build_for_slurmdbd_delete_account(self, account_name: str) -> Awaitable[m.Dbv0036ResponseAccountDelete]:
+    def _build_for_slurmdbd_delete_account(
+        self, account_name: str
+    ) -> Awaitable[m.Dbv0036ResponseAccountDelete]:
         path_params = {"account_name": str(account_name)}
 
         return self.api_client.request(
@@ -59,7 +61,9 @@ class _SlurmApi:
             params=query_params,
         )
 
-    def _build_for_slurmdbd_delete_cluster(self, cluster_name: str) -> Awaitable[m.Dbv0036ResponseClusterDelete]:
+    def _build_for_slurmdbd_delete_cluster(
+        self, cluster_name: str
+    ) -> Awaitable[m.Dbv0036ResponseClusterDelete]:
         path_params = {"cluster_name": str(cluster_name)}
 
         return self.api_client.request(
@@ -69,7 +73,9 @@ class _SlurmApi:
             path_params=path_params,
         )
 
-    def _build_for_slurmdbd_delete_qos(self, qos_name: str) -> Awaitable[m.Dbv0036ResponseQosDelete]:
+    def _build_for_slurmdbd_delete_qos(
+        self, qos_name: str
+    ) -> Awaitable[m.Dbv0036ResponseQosDelete]:
         path_params = {"qos_name": str(qos_name)}
 
         return self.api_client.request(
@@ -79,7 +85,9 @@ class _SlurmApi:
             path_params=path_params,
         )
 
-    def _build_for_slurmdbd_delete_user(self, user_name: str) -> Awaitable[m.Dbv0036ResponseUserDelete]:
+    def _build_for_slurmdbd_delete_user(
+        self, user_name: str
+    ) -> Awaitable[m.Dbv0036ResponseUserDelete]:
         path_params = {"user_name": str(user_name)}
 
         return self.api_client.request(
@@ -89,7 +97,9 @@ class _SlurmApi:
             path_params=path_params,
         )
 
-    def _build_for_slurmdbd_delete_wckey(self, wckey: str) -> Awaitable[m.Dbv0036ResponseWckeyDelete]:
+    def _build_for_slurmdbd_delete_wckey(
+        self, wckey: str
+    ) -> Awaitable[m.Dbv0036ResponseWckeyDelete]:
         path_params = {"wckey": str(wckey)}
 
         return self.api_client.request(
@@ -108,7 +118,9 @@ class _SlurmApi:
             url="/diag/",
         )
 
-    def _build_for_slurmdbd_get_account(self, account_name: str) -> Awaitable[m.Dbv0036AccountInfo]:
+    def _build_for_slurmdbd_get_account(
+        self, account_name: str
+    ) -> Awaitable[m.Dbv0036AccountInfo]:
         path_params = {"account_name": str(account_name)}
 
         return self.api_client.request(
@@ -128,7 +140,11 @@ class _SlurmApi:
         )
 
     def _build_for_slurmdbd_get_association(
-        self, cluster: str = None, account: str = None, user: str = None, partition: str = None
+        self,
+        cluster: str = None,
+        account: str = None,
+        user: str = None,
+        partition: str = None,
     ) -> Awaitable[m.Dbv0036AssociationsInfo]:
         query_params = {}
         if cluster is not None:
@@ -156,7 +172,9 @@ class _SlurmApi:
             url="/associations/",
         )
 
-    def _build_for_slurmdbd_get_cluster(self, cluster_name: str) -> Awaitable[m.Dbv0036ClusterInfo]:
+    def _build_for_slurmdbd_get_cluster(
+        self, cluster_name: str
+    ) -> Awaitable[m.Dbv0036ClusterInfo]:
         path_params = {"cluster_name": str(cluster_name)}
 
         return self.api_client.request(
@@ -293,7 +311,9 @@ class _SlurmApi:
             url="/qos/",
         )
 
-    def _build_for_slurmdbd_get_single_qos(self, qos_name: str) -> Awaitable[m.Dbv0036QosInfo]:
+    def _build_for_slurmdbd_get_single_qos(
+        self, qos_name: str
+    ) -> Awaitable[m.Dbv0036QosInfo]:
         path_params = {"qos_name": str(qos_name)}
 
         return self.api_client.request(
@@ -312,7 +332,9 @@ class _SlurmApi:
             url="/tres/",
         )
 
-    def _build_for_slurmdbd_get_user(self, user_name: str) -> Awaitable[m.Dbv0036UserInfo]:
+    def _build_for_slurmdbd_get_user(
+        self, user_name: str
+    ) -> Awaitable[m.Dbv0036UserInfo]:
         path_params = {"user_name": str(user_name)}
 
         return self.api_client.request(
@@ -331,7 +353,9 @@ class _SlurmApi:
             url="/users/",
         )
 
-    def _build_for_slurmdbd_get_wckey(self, wckey: str) -> Awaitable[m.Dbv0036WckeyInfo]:
+    def _build_for_slurmdbd_get_wckey(
+        self, wckey: str
+    ) -> Awaitable[m.Dbv0036WckeyInfo]:
         path_params = {"wckey": str(wckey)}
 
         return self.api_client.request(
@@ -398,7 +422,9 @@ class AsyncSlurmApi(_SlurmApi):
     ) -> m.Dbv0036ResponseWckeyAdd:
         return await self._build_for_slurmdbd_add_wckeys()
 
-    async def slurmdbd_delete_account(self, account_name: str) -> m.Dbv0036ResponseAccountDelete:
+    async def slurmdbd_delete_account(
+        self, account_name: str
+    ) -> m.Dbv0036ResponseAccountDelete:
         return await self._build_for_slurmdbd_delete_account(account_name=account_name)
 
     async def slurmdbd_delete_association(
@@ -408,7 +434,9 @@ class AsyncSlurmApi(_SlurmApi):
             account=account, user=user, cluster=cluster, partition=partition
         )
 
-    async def slurmdbd_delete_cluster(self, cluster_name: str) -> m.Dbv0036ResponseClusterDelete:
+    async def slurmdbd_delete_cluster(
+        self, cluster_name: str
+    ) -> m.Dbv0036ResponseClusterDelete:
         return await self._build_for_slurmdbd_delete_cluster(cluster_name=cluster_name)
 
     async def slurmdbd_delete_qos(self, qos_name: str) -> m.Dbv0036ResponseQosDelete:
@@ -434,7 +462,11 @@ class AsyncSlurmApi(_SlurmApi):
         return await self._build_for_slurmdbd_get_accounts()
 
     async def slurmdbd_get_association(
-        self, cluster: str = None, account: str = None, user: str = None, partition: str = None
+        self,
+        cluster: str = None,
+        account: str = None,
+        user: str = None,
+        partition: str = None,
     ) -> m.Dbv0036AssociationsInfo:
         return await self._build_for_slurmdbd_get_association(
             cluster=cluster, account=account, user=user, partition=partition
@@ -583,7 +615,9 @@ class SyncSlurmApi(_SlurmApi):
         coroutine = self._build_for_slurmdbd_add_wckeys()
         return get_event_loop().run_until_complete(coroutine)
 
-    def slurmdbd_delete_account(self, account_name: str) -> m.Dbv0036ResponseAccountDelete:
+    def slurmdbd_delete_account(
+        self, account_name: str
+    ) -> m.Dbv0036ResponseAccountDelete:
         coroutine = self._build_for_slurmdbd_delete_account(account_name=account_name)
         return get_event_loop().run_until_complete(coroutine)
 
@@ -595,7 +629,9 @@ class SyncSlurmApi(_SlurmApi):
         )
         return get_event_loop().run_until_complete(coroutine)
 
-    def slurmdbd_delete_cluster(self, cluster_name: str) -> m.Dbv0036ResponseClusterDelete:
+    def slurmdbd_delete_cluster(
+        self, cluster_name: str
+    ) -> m.Dbv0036ResponseClusterDelete:
         coroutine = self._build_for_slurmdbd_delete_cluster(cluster_name=cluster_name)
         return get_event_loop().run_until_complete(coroutine)
 
@@ -628,7 +664,11 @@ class SyncSlurmApi(_SlurmApi):
         return get_event_loop().run_until_complete(coroutine)
 
     def slurmdbd_get_association(
-        self, cluster: str = None, account: str = None, user: str = None, partition: str = None
+        self,
+        cluster: str = None,
+        account: str = None,
+        user: str = None,
+        partition: str = None,
     ) -> m.Dbv0036AssociationsInfo:
         coroutine = self._build_for_slurmdbd_get_association(
             cluster=cluster, account=account, user=user, partition=partition
